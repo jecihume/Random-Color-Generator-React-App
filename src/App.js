@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
-function App() {
+const randomColor = require('randomcolor');
+
+export default function App() {
+  // lightbulb, light switch, on(default value)
+  const [color, setColor] = useState('#ff66ff');
+  // create a box that holds a random color with every reload
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <h1 style={{ color: color }}>Random Color</h1>
+      <p
+        style={{
+          backgroundColor: color,
+          width: '220px',
+          align: 'center',
+          margin: '0 auto',
+        }}
+      >
+        Choose your own color!
+      </p>
+      {/* This creates the button */}
+      <div>
+        <button
+          onClick={() => {
+            // setColor('green');
+            console.log('');
+            setColor(randomColor());
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          New Colour!
+        </button>
+      </div>
     </div>
   );
 }
-
-export default App;
