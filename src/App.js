@@ -4,9 +4,7 @@ import { useState } from 'react';
 const randomColor = require('randomcolor');
 
 export default function App() {
-  // lightbulb, light switch, on(default value)
   const [color, setColor] = useState('#ff66ff');
-  // create a box that holds a random color with every reload
 
   return (
     <div className="App">
@@ -19,14 +17,11 @@ export default function App() {
           margin: '0 auto',
         }}
       >
-        Choose your own color!
+        Choose your own color!!!
       </p>
-      {/* This creates the button */}
       <div>
         <button
           onClick={() => {
-            // setColor('green');
-            console.log('');
             setColor(randomColor());
           }}
         >
